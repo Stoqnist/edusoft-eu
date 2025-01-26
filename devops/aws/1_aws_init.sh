@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Get the directory where the script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Source the .env file using absolute path
+0_source_env.sh
+
+# Now you can use the environment variables
+echo "Deploy in: $REGION"
+
 # AWS Account initialization script
 # This script sets up initial AWS configuration and required IAM roles/policies
 
@@ -17,6 +26,8 @@ fi
 
 # Create IAM roles and policies
 echo "Creating IAM roles and policies..."
+
+echo $VAR
 
 # Create S3 bucket policy for CloudFront access
 cat > devops/aws/s3-cloudfront-policy.json << EOL

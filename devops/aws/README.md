@@ -43,6 +43,22 @@ This collection of scripts sets up a secure video content delivery system using 
    - REGION
    - OAC_ID
    - DISTRIBUTION_ID
+```shell
+# (Optional) backup .env to avoid loosing configuration variables
+cp .env .env.old
+```
+
+```shell
+# (Optional) restore .env from backup
+cp .env.old .env
+```
+
+```shell
+# create .env from .env.dist template
+cp .env.dist .env
+```
+and fill it in
+
 
 2. Make scripts executable:
    ```bash
@@ -50,6 +66,9 @@ This collection of scripts sets up a secure video content delivery system using 
    ```
 
 3. Run the deployment script:
+   ```bash
+   ./1_aws_init.sh
+   ```
    ```bash
    ./5_deploy.sh
    ```
